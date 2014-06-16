@@ -21,7 +21,8 @@ case "player.action":
 $player = $data["player"];
 $item = $player->getSlot($player->slot);
 if($item->getid()==345){
-$data->sendChat("** Have Fun and BE CARE FULL!");
+$player->teleport($this->api->level->getSpawn());
+$data->sendChat("[FindSpawn] you have arrived at Spawn!");
 }
 }
 }
