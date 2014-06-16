@@ -22,7 +22,7 @@ $player = $data["player"];
 $item = $player->getSlot($player->slot);
 if($item->getid()==345){
 $player->teleport($this->api->level->getSpawn());
-$data->sendChat("[FindSpawn] you have arrived at Spawn!");
+$data->sendChat("[FindSpawn] You have arrived at Spawn!");
 }
 }
 }
