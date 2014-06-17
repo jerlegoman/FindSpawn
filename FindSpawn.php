@@ -14,6 +14,7 @@ $this->api = $api;
 }
 public function init() {
 $this->api->addHandler("player.action", array($this, "eventHandle"), 50);
+$this->api->addHandler("player.equipment.change", array($this, "eventHandler"), 50);
 }
 public function eventHandle($data, $event) {
 switch ($event) {
@@ -21,9 +22,17 @@ case "player.action":
 $player = $data["player"];
 $item = $player->getSlot($player->slot);
 if($item->getid()==345){
-$player->teleport($this->api->level->getSpawn());
-$data->sendChat("[FindSpawn] You have arrived at Spawn!");
+$player->teleport($this->api->level->getspawn());
+$player->sendChat("[FindSpawn] You have arrived at Spawn!");
 }
+
+Break;
+
+case "player.equipment.change":
+if($item->getid()==345){
+$player->sendChat("Tap and Hold on the screen to tp to spawn!");
+}
+Break;
 }
 }
 public function __destruct(){}
