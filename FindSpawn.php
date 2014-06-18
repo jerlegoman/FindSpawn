@@ -29,6 +29,8 @@ $player->sendChat("[FindSpawn] You have arrived at Spawn!");
 Break;
 
 case "player.equipment.change":
+$player = $data["player"];
+$item = $player->getSlot($player->slot);
 if($item->getid()==345){
 $player->sendChat("Tap and Hold on the screen to tp to spawn!");
 }
